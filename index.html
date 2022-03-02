@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Whisker</title>
+	<link rel="stylesheet" href="./styles.css">
+	<link rel="icon" href="./whisker.png">
+    </head>
+
+	<style>
+		html {
+			cursor: ('normal.gif'), auto;
+		}
+	</style>
+
+    <body style="background-color: black">
+        <div id="content-container" style="display: table; background-color: #F6F6F5; outline: 5px #333333 solid">
+            <!--Create the main header bar-->
+            <div id="headerbar" style="background-color: #411934">
+                <button onclick="document.getElementById('restore-win').removeAttribute('hidden'); document.getElementById('content-container').hidden = true;">⧉</button>
+                <button id="cleardoc" onclick="this.disabled = true; document.getElementById('ereaseconfirm').removeAttribute('hidden');">☒</button>
+                <ht>Whisker</ht>
+                <button id="savebutton" onclick="this.disabled = true; document.getElementById('save-optios').removeAttribute('hidden');">Save</button>
+                <button id="loadbutton" onclick="load()">Load</button>
+                <button id="oocb" onclick="this.hidden = true; document.getElementById('textfield-area').hidden = true; document.getElementById('ocb').removeAttribute('hidden'); document.getElementById('options-area').removeAttribute('hidden');">Options</button>
+                <button id="ocb" hidden onclick="this.hidden = true; document.getElementById('options-area').hidden = true; document.getElementById('oocb').removeAttribute('hidden'); document.getElementById('textfield-area').removeAttribute('hidden');">Document</button>
+            </div>
+            <!--Create the file erease confirm menu-->
+            <div hidden id="ereaseconfirm">
+                <t>Are you sure you want to start a new document?</t>
+                <button onclick="document.getElementById('cleardoc').removeAttribute('disabled'); document.getElementById('ereaseconfirm').hidden = true; document.getElementById('txtArea').value = '';">Yes</button>
+                <button onclick="document.getElementById('cleardoc').removeAttribute('disabled'); document.getElementById('ereaseconfirm').hidden = true">No</button>
+                <br>
+                <t>Any unsaved changes will be destroyed!</t>
+            </div>
+            <!--Create the save file menu-->
+            <div hidden id="save-optios">
+                <input type="text" id="fname" placeholder="File Name"/>
+                <button id="savefilebutton" onclick="save();">Save</button>
+                <button onclick="document.getElementById('savebutton').removeAttribute('disabled'); document.getElementById('save-optios').hidden = true;">Cancel</button>
+            </div>
+            <!--Create the main text field-->
+            <div id="textfield-area">
+                <textarea id="txtArea" style="resize: none;" rows="20" cols="52"></textarea>
+            </div>
+            <!--Create the main options menu-->
+            <div hidden id="options-area">
+                <t><font size=10>Whisker</font></t>
+                <hr>
+                <t>Version 1.0</t>
+                <br>
+                <button onclick="aboutwhisker()">About this version</button>
+                <br>
+                <t><strong><i>©Mr.Weston 2022</i></strong></t>
+                <hr>
+                <input type="checkbox" checked id="spchk-toggle" disabled><t>Enable Spell Checker</t>
+                <button onclick="togglespchk();">?</button>
+            </div>
+        </div>
+        <button hidden id="restore-win" onclick="this.hidden=true; document.getElementById('content-container').removeAttribute('hidden');">Whisker</button>
+    </body>
+    <!--Define the functions-->
+    <script src="app.js"></script>
+</html>

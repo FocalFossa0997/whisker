@@ -1,0 +1,13 @@
+{
+ "name": "whisker",
+ "productName": "Whisker",
+ "version": "1.0.0",
+ "main": "index.js",
+ "devDependencies": {
+  "electron": "^1.8.8",
+  "electron-packager": "^15.4.0"
+ },
+ "scripts": {
+  "start": "electron ./"
+ }
+}
